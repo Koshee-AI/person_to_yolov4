@@ -1,48 +1,41 @@
 # person_autocrop
 This is a Python script to auto-detect and auto-crop a person in a image.
 
-This script uses **Tensorflow** and **SSD Mobilenet V2 (COCO)** to recognize people in a photo, then crop the photo to the single person.
-
-![example](https://github.com/northumber/person_autocrop/assets/17114557/bd3d352a-de33-4583-bba3-62ea77b844ab)
-
-### Specifications
-- Windows and Linux command-line auto-install scripts
-  - Creates automatically the Python virtual environment and install requirements
-  - Downloads automatically the SSD Mobilenet V2 COCO model
-- Supports GPU computing
-- Images extension supported: .jpg, .jpeg, .png, .webp, .bmp
-- Auto-crop a person if found
-  - If there is more than one person in the photo, it will create more photos
-  - Batch processing a input folder
-- Option to save image in a specific format or save as input format
-
-### Requirements
-- Python 3.10 installed (with Python-pip)
-
+This script uses **Tensorflow** and **SSD Mobilenet V2 (COCO)** to recognize
+people and then update a yolov4 dataset with captions and bboxes that are
+appropriate to be loaded into DarkMark.
 
 ## How to use
 1. Download the repository
-3. Just run the .bat or .sh scripts.
-   - If Windows: `run.bat`
-   - If Linux: `run.sh` (be sure to `chmod +x` the script)
+```
+cd ~/koshee
+git clone git@github.com:Koshee-AI/person_to_yolov4.git
+```
+2. Assuming you have already installed `protect-python`, install `tensorflow`
 
-## Manual installation and use
-If the automatic script does not work or if you want to use the python script directly.
+```
+pip3 install --upgrade tensorflow --break-system-packages
+```
 
-1. First, create a folder (name of your choice) and open a terminal in it.
-2. Create a Python virtual environment:
-   
-`python -m venv venv`
+3. Download the protect-scripts repository (required to link to captions list)
 
-3. Activate the environment:
+```
+cd ~/koshee
+git clone git@github.com:Koshee-AI/protect-scripts.git
+```
 
-   - If Windows: `./venv/Scripts/activate`
-   - If Linux: `source venv/bin/activate`
+4. Run person_to_yolov4.py
 
-4. Install the requirements:
+**Get Help**
+```
+python ~/koshee/person_to_yolov4/person_to_yolov4.py -h
+```
 
-`pip install -r requirements.txt`
+**Typical Usage**
+```
+cd new_directory_with_images_dir
+python ~/koshee/person_to_yolov4/person_to_yolov4.py -g 20 "a person moving an item under their shirt"
+```
 
-5. Run the Python script `person_autocrop.py` with:
-
-`python person_autocrop.py`
+The above would label images inside of `new_directory_with_images_dir/images` with a 20% bigger box
+than default person selection and label that box with the caption `a person moving an item under their shirt`

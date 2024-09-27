@@ -23,7 +23,7 @@ def parse_args(args):
   )
   parser.add_argument('-d','-p', '--path', action='store', default='.', dest='path', help='the directory to update')
   parser.add_argument('--fc','--force-category', action='store', dest='force_category', default='small', help='force an anomaly category, despite filename')
-  parser.add_argument('-g','--growth','--percent', action='store', type=int, dest='growth', default=10, help='grow the person selector by a percent')
+  parser.add_argument('-g','--growth','--percent', action='store', type=int, dest='growth', default=10, help='grow the person selector by a percent (20 == 20 percent more)')
   parser.add_argument('-s','--scale', action='store', type=float, dest='scale', default=1.0, help='scale')
   parser.add_argument('new_captions', nargs=argparse.REMAINDER, help='captions to set images in the range to')
   return parser.parse_args(args)
