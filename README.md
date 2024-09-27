@@ -1,5 +1,4 @@
-# person_autocrop
-This is a Python script to auto-detect and auto-crop a person in a image.
+# person_to_yolov4
 
 This script uses **Tensorflow** and **SSD Mobilenet V2 (COCO)** to recognize
 people and then update a yolov4 dataset with captions and bboxes that are
