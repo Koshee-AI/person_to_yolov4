@@ -10,10 +10,10 @@ appropriate to be loaded into DarkMark.
 cd ~/koshee
 git clone git@github.com:Koshee-AI/person_to_yolov4.git
 ```
-2. Assuming you have already installed `protect-python`, install `tensorflow`
+2. Install all requirements
 
 ```
-pip3 install --upgrade tensorflow --break-system-packages
+pip3 install -r requirements.txt --break-system-packages
 ```
 
 3. Download the protect-scripts repository (required to link to captions list)
