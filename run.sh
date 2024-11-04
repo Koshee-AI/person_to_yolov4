@@ -3,6 +3,8 @@
 VENV_FOLDER="venv"
 REQUIREMENTS_FILE="requirements.txt"
 
+sudo apt install python3.12-venv
+
 # Check if virtual environment folder exists
 if [ ! -d "$VENV_FOLDER" ]; then
     echo "LOG: Virtual environment not found. Creating..."
@@ -64,3 +66,6 @@ if [ ! -d "$MODELFOLDER" ]; then
         echo "LOG: Model folder created successfully."
     fi
 fi
+
+echo Running person_to_yolov4.py $@
+python person_to_yolov4.py $@

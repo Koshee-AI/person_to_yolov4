@@ -10,17 +10,19 @@ appropriate to be loaded into DarkMark.
 cd ~/koshee
 git clone git@github.com:Koshee-AI/person_to_yolov4.git
 ```
-2. Install all requirements
 
-```
-pip3 install -r requirements.txt --break-system-packages
-```
-
-3. Download the protect-scripts repository (required to link to captions list)
+2. Download the protect-scripts repository (required to link to captions list)
 
 ```
 cd ~/koshee
 git clone git@github.com:Koshee-AI/protect-scripts.git
+```
+
+2. Install all requirements
+
+```
+cd ~/koshee/person_to_yolov4
+./run.sh -h
 ```
 
 4. Run person_to_yolov4.py
