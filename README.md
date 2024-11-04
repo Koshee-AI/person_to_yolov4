@@ -18,7 +18,7 @@ cd ~/koshee
 git clone git@github.com:Koshee-AI/protect-scripts.git
 ```
 
-2. Install all requirements
+3. Install all requirements
 
 ```
 cd ~/koshee/person_to_yolov4
